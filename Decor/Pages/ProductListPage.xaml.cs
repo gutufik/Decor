@@ -45,7 +45,7 @@ namespace Decor.Pages
                 { "15+", x => x.CurrentSale >= 15 },
             };
             DataAccess.RefreshList += DataAccess_RefreshList;
-            if (App.User == null)
+            if (App.User == null || App.User.Role.Name != "Администратор")
             {
                 btnAddProduct.Visibility = Visibility.Collapsed;
             }

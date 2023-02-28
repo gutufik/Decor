@@ -38,7 +38,7 @@ namespace Decor.Pages
             {
                 tbArticle.IsEnabled = false;
             }
-            else
+            if(App.User == null || App.User.Role.Name != "Администратор")
             {
                 btnDelete.Visibility = Visibility.Collapsed;
             }
