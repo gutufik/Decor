@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d29f2b44cb8a422d9897c5b0ddf4f418" Name="Diagram1">
+        <EntityTypeShape EntityType="DecorMishaModel.DeliveryPoint" Width="1.5" PointX="0.75" PointY="15.5" />
+        <EntityTypeShape EntityType="DecorMishaModel.Manufacturer" Width="1.5" PointX="0.75" PointY="8.125" />
+        <EntityTypeShape EntityType="DecorMishaModel.Order" Width="1.5" PointX="3" PointY="13.875" />
+        <EntityTypeShape EntityType="DecorMishaModel.OrderProduct" Width="1.5" PointX="5.25" PointY="2.25" />
+        <EntityTypeShape EntityType="DecorMishaModel.OrderStatu" Width="1.5" PointX="0.75" PointY="13.125" />
+        <EntityTypeShape EntityType="DecorMishaModel.Product" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="DecorMishaModel.ProductCategory" Width="1.5" PointX="0.75" PointY="10.375" />
+        <EntityTypeShape EntityType="DecorMishaModel.Role" Width="1.5" PointX="5.75" PointY="6.375" />
+        <EntityTypeShape EntityType="DecorMishaModel.Supplier" Width="1.5" PointX="0.75" PointY="2.625" />
+        <EntityTypeShape EntityType="DecorMishaModel.sysdiagram" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DecorMishaModel.Unit" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DecorMishaModel.User" Width="1.5" PointX="8" PointY="6" />
+        <AssociationConnector Association="DecorMishaModel.FK_Order_DeliveryPoint" />
+        <AssociationConnector Association="DecorMishaModel.FK_Product_Manufacturer" />
+        <AssociationConnector Association="DecorMishaModel.FK_Order_OrderStatus" />
+        <AssociationConnector Association="DecorMishaModel.FK_OrderProduct_Order" />
+        <AssociationConnector Association="DecorMishaModel.FK_OrderProduct_Product" />
+        <AssociationConnector Association="DecorMishaModel.FK_Product_ProductCategory" />
+        <AssociationConnector Association="DecorMishaModel.FK_Product_Supplier" />
+        <AssociationConnector Association="DecorMishaModel.FK_Product_Unit" />
+        <AssociationConnector Association="DecorMishaModel.FK_User_Role" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
