@@ -29,6 +29,7 @@ namespace Decor.Pages
         private void btnLoginAsGuest_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Pages.ProductListPage());
+            App.User = null;
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)

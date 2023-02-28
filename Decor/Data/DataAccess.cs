@@ -25,6 +25,29 @@ namespace Decor.Data
                 DecorMishaEntities.GetContext().Products.Add(product);
 
             DecorMishaEntities.GetContext().SaveChanges();
+            RefreshList?.Invoke();
+        }
+
+        internal static List<Supplier> GetSuppliers()
+        {
+            return DecorMishaEntities.GetContext().Suppliers.ToList();
+        }
+
+        internal static List<Unit> GetUnits()
+        {
+            return DecorMishaEntities.GetContext().Units.ToList();
+        }
+
+        internal static List<ProductCategory> GetProductCategories()
+        {
+            return DecorMishaEntities.GetContext().ProductCategories.ToList();
+        }
+
+        internal static void DeleteProduct(Product product)
+        {
+            DecorMishaEntities.GetContext().Products.Remove(product);
+            DecorMishaEntities.GetContext().SaveChanges();
+            RefreshList?.Invoke();
         }
     }
 }

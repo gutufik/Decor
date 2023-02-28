@@ -5,27 +5,39 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Decor.Pages"
       mc:Ignorable="d" 
+      FontFamily="Candara"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductListPage">
+      Title="Список продуктов">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <TextBox x:Name="tbSearch" TextChanged="tbSearch_TextChanged"/>
+        <ComboBox x:Name="cbSort" Grid.Column="1" ItemsSource="{Binding Sortings.Keys}" 
+                  SelectedIndex="0"
+                  SelectionChanged="cbSort_SelectionChanged"/>
+        <ComboBox Name="cbFilter" Grid.Column="2" ItemsSource="{Binding Filters.Keys}" 
+                  SelectedIndex="0"
+                  SelectionChanged="cbFilter_SelectionChanged"/>
 
-        <ListView x:Name="lvProducts" Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding Products}" 
+        <TextBlock x:Name="tbProductCount" Grid.Row="1"/>
+
+        <ListView x:Name="lvProducts" Grid.Row="2" Grid.ColumnSpan="3" ItemsSource="{Binding Products}" 
                   HorizontalContentAlignment="Stretch"
                   SelectionChanged="lvProducts_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1">
-                        
+                    <Border BorderBrush="Black" BorderThickness="1" Background="{Binding Background}" >
+
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto"/>
@@ -54,13 +66,17 @@
                             <TextBlock Text="{Binding Manufacturer.Name}" Grid.Column="1" Grid.Row="2"/>
                             <TextBlock Text="{Binding Price}" Grid.Column="1" Grid.Row="3"/>
 
-                            <TextBlock Text="{Binding Discount}" Grid.Column="2" />
+                            <TextBlock  HorizontalAlignment="Right" Grid.Row="1" Grid.Column="2" >
+                                <Run Text="{Binding CurrentSale}"/>
+                                <Run Text="%"/>
+                            </TextBlock>
 
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+        <Button x:Name="btnAddProduct" Grid.Row="3" Content="Добавить товар" Click="btnAddProduct_Click"/>
+
     </Grid>
 </Page>

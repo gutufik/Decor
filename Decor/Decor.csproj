@@ -114,6 +114,7 @@
     <Compile Include="Data\ProductCategory.cs">
       <DependentUpon>DecorModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\ProductPartial.cs" />
     <Compile Include="Data\Role.cs">
       <DependentUpon>DecorModel.tt</DependentUpon>
     </Compile>
@@ -141,6 +142,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
@@ -148,6 +153,9 @@
     </Compile>
     <Compile Include="Pages\ProductListPage.xaml.cs">
       <DependentUpon>ProductListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductPage.xaml.cs">
+      <DependentUpon>ProductPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -193,7 +201,7 @@
       <DependentUpon>DecorModel.edmx</DependentUpon>
       <LastGenOutput>DecorModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\logo.png" />
+    <Resource Include="Resources\logo.png" />
     <None Include="Resources\icon.ico" />
     <Resource Include="Resources\picture.png" />
   </ItemGroup>

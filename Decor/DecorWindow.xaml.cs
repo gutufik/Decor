@@ -23,7 +23,20 @@ namespace Decor
         public DecorWindow()
         {
             InitializeComponent();
+            frmMain.Navigated += FrmMain_Navigated;
             frmMain.NavigationService.Navigate(new Pages.AuthorizationPage());
+        }
+
+        private void FrmMain_Navigated(object sender, NavigationEventArgs e)
+        {
+            tbTitle.Text = (frmMain.Content as Page).Title;
+            btnGoBack.Visibility = frmMain.NavigationService.CanGoBack? Visibility.Visible: Visibility.Collapsed;
+        }
+
+        private void btnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (frmMain.NavigationService.CanGoBack)
+                frmMain.NavigationService.GoBack();
         }
     }
 }
